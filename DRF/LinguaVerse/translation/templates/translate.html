@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <form style="width:50%; margin:auto;" method="post">
+        {% csrf_token %}
+        <div class="m-5 my-3">
+            <label for="source_text" class="form-label">Source Text</label>
+            <textarea  class="form-control " id="source_text" name="source_text" rows="4" required></textarea>
+        </div>
+        <div class="m-5 my-3">
+            <label for="source_language" class="form-label">Source Language</label>
+            <select class="form-select " id="source_language" name="source_language" required>
+                <option value="" selected>Select a source language</option>
+                <!-- Add options here using JavaScript or Django template tags -->
+            </select>
+        </div>
+        <div class="m-5 my-3">
+            <label for="target_language" class="form-label">Target Language</label>
+            <select class="form-select" id="target_language" name="target_language" required>
+                <option value="" selected>Select a target language</option>
+                <!-- Add options here using JavaScript or Django template tags -->
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary m-5">Translate</button>
+
+        <h2 class="mx-5">Translation Result:</h2>
+        <p>{{ source_text }}</p><br>
+        <p>{{ target_text }}</p>
+    </form>
+
+    
+    <!-- Other specific content for this page -->
+{% endblock content %}
+{% load static %}
+<!-- Include your external JavaScript file using the template tag -->
+<script src="{% static 'js/language_options.js' %}"></script>

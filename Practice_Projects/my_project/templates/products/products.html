@@ -1,0 +1,28 @@
+{% extends 'common_code/base.html' %} 
+{% load static %}
+
+{% block title %} Products {% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/style-pro.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+    <ul>
+        <li> Apple </li>
+        <li> Banana </li>
+        <li> Mango </li>
+        <li> Cherry </li>
+    </ul>
+
+    <p> Home delivery is available at: </p>
+    {% for x in district %}
+        {{forloop.counter}} {{x}}<br>
+    {% endfor %}
+
+{% endblock content %}
+
+{% block img %}
+    <img src="{% static 'images/19.jpg' %}" alt="Photo of Tea garden" >
+{% endblock img %}

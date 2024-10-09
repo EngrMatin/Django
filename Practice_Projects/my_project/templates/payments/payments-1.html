@@ -1,0 +1,16 @@
+{% extends 'common_code/base.html' %} 
+{% block title %} bKash {% endblock title %}
+
+{% block content %}
+    <p> You can pay using {{pm}} and get {{dis}} discount <p>
+        <p> *{{con}} </p>
+
+    {% if pm %}
+        <p> You can pay using {{pm}} <p>
+    {% elif dis %}
+        <p> You can get {{dis}} discount <p>
+    {% else %}
+        <p> *{{con}} </p>
+    {% endif %}
+{% endblock content %}
+

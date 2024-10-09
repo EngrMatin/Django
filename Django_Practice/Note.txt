@@ -1,0 +1,1 @@
+The Django_Practice folder has been created within a virtual environment named vir_room2.

@@ -1,0 +1,47 @@
+{% extends 'common_code/base.html' %} 
+{% block title %} DTL {% endblock title %}
+
+{% block content %}
+{{ block.super}}
+<p> The above line comes from <i>base.html</i> due to <b>{/{block.super}/}</b> variable </p>
+   <h1> Welcome to DTL (Django Template Language) lessons </h1>
+    <h2> Django Template Language </h2>
+    <ol>
+        <li> Template Variables </li>
+        <li> Template Filters </li>
+        <li> Template Tags </li>
+    </ol>
+
+    <h2> Syntax of Template variables: </h2> 
+       <h3> {\{ variable_name \}} </h3>
+
+    <p> My name is {{nm}} </p>
+    <p> Current date and time is {{dt}} </p>
+    
+
+    <h2> Syntax of Template filters: </h2> 
+       <h3> {\{ variable_name | filter \}} </h3>
+
+       <p> My name is {{nm}} </p>
+       <p> My name is {{nm | upper}} </p>
+       <p> My name is {{nm | lower}} </p>
+       <p> My name is {{nm | capfirst}} </p>
+    <br>
+       <p> Current date and time is {{dt}} </p>
+    <p> Current date is {{dt | date:'D d M Y'}} </p>
+    <p> Current date is {{dt | date:'SHORT_DATE_FORMAT'}} </p>
+    <p> Current date is {{dt | date:'DATE_FORMAT'}} </p>
+    <p> Current time is {{dt | time:'TIME_FORMAT'}} </p>
+
+    <h2> Syntax of Template tags: </h2> 
+       {% comment %} <h3> {% tag %} </h3> {% endcomment %}
+
+    <h3> Example of Template tags: </h3>
+
+    {% if nm %}
+    <p> My name is {{nm}} </p> 
+    {% else %}
+    <p> No name is given </p> 
+    {% endif %}
+{% endblock content %}
+
